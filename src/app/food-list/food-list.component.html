@@ -1,0 +1,107 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<div *ngIf="deleteItemMessageFlag">
+    <div class="alert alert-success" role="alert">
+        FoodItem : name : {{foodModelWithId.name}}, type : {{foodModelWithId.type}} and
+        price : {{foodModelWithId.price}} is deleted.
+    </div>
+</div>
+
+<div *ngIf="successMessageFlag">
+    <div class="alert alert-success" role="alert">
+        FoodItem : name : {{foodModelWithId.name}}, type : {{foodModelWithId.type}} and
+        price : {{foodModelWithId.price}} is added to the list.
+    </div>
+</div>
+
+<div *ngIf="duplicateItemFlag">
+    <div class="alert alert-danger" role="alert">
+        FoodItem {{foodModel.name}} already exist.
+    </div>
+</div>
+
+<!-- Updated Messages - Success -->
+<div *ngIf="updateSuccessMessageFlag">
+    <div class="alert alert-success" role="alert">
+        FoodItem value updated.
+    </div>
+</div>
+
+<!-- Updated Messages - Failure -->
+<div *ngIf="updateErrorMessageFlag">
+    <div class="alert alert-success" role="alert">
+        Update failed as food item does not exist.
+    </div>
+</div>
+
+<div *ngIf="showMenuListFlag">
+    <input type="button" (click)="OnAddNewItem()" value="Add New Item" style="float: right;margin-right: 100px;">
+    <br />
+    <br />
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Id </th>
+                <th scope="col">Type</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Operation</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of items">
+
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.type}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td> <input type="button" (click)="OnDeleteItem(item)" value="Delete" style="margin:5px;">
+                    <input  type="button" (click)="OnUpdateItem(item)" value="Update" style="margin:5px;">
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<div *ngIf="showAddNewItemFormFlag">
+
+    <div class="container-fluid">
+        <form #userForm="ngForm" >
+
+
+
+
+            <div class="form-group">
+                <label>Item Name</label>
+                <input type="text" class="form-control" name="itemName" [(ngModel)]="foodModel.name">
+            </div>
+
+            <div class="form-group">
+                <label>Item Type</label>
+                <select class="custom-select" name="itemType" [(ngModel)]="foodModel.type">
+
+                    <option selected>choose Food Item type</option>
+                    <option *ngFor="let type of types">{{type}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Item Price</label>
+                <input type="price" class="form-control" name="itemPrice" [(ngModel)]="foodModel.price">
+            </div>
+            <button (click)="onSubmit()" *ngIf="submitButtonFlag" class="btn btn-primary" type="submit">Submit</button>
+            <button (click)="onUpdate()" *ngIf="updateButtonFlag" class="btn btn-primary" type="submit">Update</button>
+
+        </form>
+
+    </div>
+
+
+</div>
