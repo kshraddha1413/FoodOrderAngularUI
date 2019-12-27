@@ -15,14 +15,14 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class FoodServiceService {
+export class FoodService {
   private _url: string = 'http://localhost:8080/api/';
 
 
   constructor(private http: HttpClient) { }
 
   getFoodItemList(): Observable<FoodModel[]> {
-    console.log('from service before')
+   
     return this.http.get<FoodModel[]>(`${this._url}fooditem`);
   }
 

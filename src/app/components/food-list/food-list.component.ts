@@ -1,9 +1,9 @@
 import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
-import { FoodServiceService } from '../food-service.service';
-import { FoodModel } from '../model/FoodModel';
-import { FoodModelWithId } from '../model/FoodModelWithId';
+import { FoodService } from '../../food.service';
+import { FoodModel } from '../../model/FoodModel';
+import { FoodModelWithId } from '../../model/FoodModelWithId';
 import { FormatWidth } from '@angular/common';
-import { MessageModel } from '../model/MessageModel';
+import { MessageModel } from '../../model/MessageModel';
 
 @Component({
   selector: 'app-food-list',
@@ -29,7 +29,7 @@ export class FoodListComponent implements OnInit {
   foodModelWithId: FoodModelWithId = new FoodModelWithId();
   deleteMessage: MessageModel = new MessageModel();
 
-  constructor(private _foodService: FoodServiceService) { }
+  constructor(private _foodService: FoodService) { }
 
   ngOnInit() {
 
@@ -46,7 +46,7 @@ export class FoodListComponent implements OnInit {
       .subscribe(data => this.items = data);
   }
 
-  types = ['Breakfast', 'Lunch', 'Dinner', 'Beverages', 'Kidsmenu'];
+  types = ['Appetizer', 'Lunch', 'Dinner', 'Beverages', 'Kids','Special','Desserts'];
 
 
   OnAddNewItem() {
@@ -65,12 +65,12 @@ export class FoodListComponent implements OnInit {
 
   async  onSubmit() {
     let found = false;
-    console.log(this.foodModel);
+    
 
     for (var i = 0; i < this.items.length; i++) {
       if (this.items[i].name == this.foodModel.name) {
         found = true;
-        console.log('found')
+       
       }
     }
 
@@ -84,15 +84,13 @@ export class FoodListComponent implements OnInit {
       this.updateSuccessMessageFlag = false
     } else {
       this._foodService.postFoodItem(this.foodModel).subscribe(data => this.foodModelWithId = data);
-      console.log('aaaa');
-      console.log(this.foodModelWithId.id);
-
-      console.log("Beforep: " + new Date().toString());
+      
+     
       await this.delay(3000);
-      console.log("Afterp:  " + new Date().toString());
+      
       this.items = [];
       this._foodService.getFoodItemList().subscribe(data => this.items = data);
-      console.log('cccc');
+      
 
       this.duplicateItemFlag = false;
       this.successMessageFlag = true;
@@ -105,7 +103,7 @@ export class FoodListComponent implements OnInit {
     }
   }
   async onUpdate() {
-    console.log('asadasfs');
+    
     let found = false;
     for (var i = 0; i < this.items.length; i++) {
       if (this.items[i].name == this.foodModel.name) {
@@ -115,12 +113,12 @@ export class FoodListComponent implements OnInit {
         this.foodModelWithId.type = this.foodModel.type;
         this.foodModelWithId.price = this.foodModel.price;
 
-        console.log(this.foodModelWithId);
+        
         this._foodService.putFoodItem(this.foodModelWithId).subscribe(data => this.foodModelWithId = data);
 
-        console.log("Beforep: " + new Date().toString());
+        
         await this.delay(3000);
-        console.log("Afterp:  " + new Date().toString());
+        
         this.items = [];
         this._foodService.getFoodItemList().subscribe(data => this.items = data);
 
@@ -151,13 +149,13 @@ export class FoodListComponent implements OnInit {
     this.showAddNewItemFormFlag = false;
     this.showMenuListFlag = false;
     this.deleteItemMessageFlag = false;
-    console.log('aaa');
-    console.log(selectedItem.id)
+    
+    
     this._foodService.deleteFoodItem(selectedItem.id).subscribe(data => this.deleteMessage = data);
 
-    console.log("Beforep: " + new Date().toString());
+    
     await this.delay(2000);
-    console.log("Afterp:  " + new Date().toString());
+    
 
     this._foodService.getFoodItemList().subscribe(data => this.items = data);
     this.deleteItemMessageFlag = true;
@@ -178,7 +176,7 @@ export class FoodListComponent implements OnInit {
 
     this.foodModel = new FoodModel();
     this.foodModel.name = selectedItem.name;
-    console.log(selectedItem.type);
+    
     this.foodModel.type = selectedItem.type;
     this.foodModel.price = selectedItem.price;
 

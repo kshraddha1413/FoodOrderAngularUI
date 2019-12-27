@@ -1,0 +1,29 @@
+<div class="sidenav">
+    <a (click)="onApetizer()">Appetizers</a>
+    <a (click)="onLunch()">Lunch</a>
+    <a (click)="onDinner()">Dinner</a>
+    <a >Kids</a>
+    <a >Special</a>
+    <a>Beverages</a>
+    <a>Desserts</a>
+</div>
+
+<div *ngIf="showTableDataFlag">
+    <div class="main">
+        <h2>{{type}}</h2>
+<table class="table table-striped">
+    
+    <tbody *ngFor="let item of subitems">
+        <tr>
+
+            <td>{{item.name}}</td>
+            <td>${{item.price}}</td>
+            <td><button  class="btn btn-primary" type="submit">Add to cart</button></td>
+            
+        </tr>
+
+      
+    </tbody>
+  </table>
+</div>
+</div>
