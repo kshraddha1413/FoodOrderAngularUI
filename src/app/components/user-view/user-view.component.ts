@@ -23,9 +23,9 @@ export class UserViewComponent implements OnInit {
   }
 
   onApetizer(){
-    this.type='Appetizers';
+    this.type='Appetizer';
     this.subitems = [];
-    this.getSubArray('Appetizers');
+    this.getSubArray('Appetizer');
     this.showTableDataFlag =true;
   }
 

@@ -1,5 +1,5 @@
 <div class="sidenav">
-    <a (click)="onApetizer()">Appetizers</a>
+    <a (click)="onApetizer()">Appetizer</a>
     <a (click)="onLunch()">Lunch</a>
     <a (click)="onDinner()">Dinner</a>
     <a>Kids</a>
@@ -12,22 +12,20 @@
 <div *ngIf="showTableDataFlag">
     <div class="main">
         <h3 style="margin-top: 3%;margin-bottom: 3%;">{{type}}</h3>
+        <div class="card" style="width: 70%;">
         <table class="table table-striped">
             <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Operation</th>
-                </tr>
+               
             </thead>
             <tbody>
-                <tr *ngFor="let item of items">
+                <tr *ngFor="let item of subitems">
                     <td>{{item.name}}</td>
                     <td>${{item.price}}</td>
                     <td><button class="btn btn-secondary" type="submit">Add to cart</button></td>
                 </tr>
             </tbody>
         </table>
+    </div>
     </div>
 </div>
 

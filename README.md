@@ -1,27 +1,31 @@
 # RosUI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+RosUI is using FoodOrderSystemwithDB RESTFul API ( https://github.com/kshraddha1413/FoodOrderSystemwithDB )
 
-## Development server
+## Customer View
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**Home Page**
 
-## Code scaffolding
+![Alt text](/cust_1.png?raw=true "Optional Title")
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Food Categories**
 
-## Build
+![Alt text](/cust_2.png?raw=true "Optional Title")
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Admin View
 
-## Running unit tests
+**Menu**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Alt text](/admin_1.PNG?raw=true "Optional Title")
 
-## Running end-to-end tests
+**Add New Item**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![Alt text](/admin_2.png?raw=true "Optional Title")
 
-## Further help
+![Alt text](/admin_2.3.png?raw=true "Optional Title")
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+**Update Item**
+
+![Alt text](/admin_3.png?raw=true "Optional Title")
+
+![Alt text](/admin_3.2.png?raw=true "Optional Title")

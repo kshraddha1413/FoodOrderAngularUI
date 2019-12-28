@@ -4,7 +4,7 @@
 
 <div class="main">
 
-    <div *ngIf ="spinnerFlag" class="spinner-border" role="status">
+    <div *ngIf="spinnerFlag" class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
     </div>
 
@@ -45,10 +45,9 @@
     <div *ngIf="showMenuListFlag">
 
         <input type="button" (click)="OnAddNewItem()" value="Add New Item" class="btn btn-secondary"
-            style="float: left;margin-left: 1%;margin-top: 3%;margin-bottom: 3%;">
-        <br />
-        <br />
-        <div>
+            style="margin-top: 3%;margin-bottom: 3%;">
+
+        <div class="card" style="width: 70%;">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -77,6 +76,8 @@
             </table>
         </div>
     </div>
+
+
 
 
 
