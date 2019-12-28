@@ -22,6 +22,7 @@ export class FoodListComponent implements OnInit {
   updateErrorMessageFlag: boolean
   updateSuccessMessageFlag: boolean
   TitleAddOrUpdate: string
+  spinnerFlag:boolean
 
   public items = [];
 
@@ -41,6 +42,7 @@ export class FoodListComponent implements OnInit {
     this.deleteItemMessageFlag = false
     this.updateErrorMessageFlag = false
     this.updateSuccessMessageFlag = false
+    this.spinnerFlag= false;
 
 
     this._foodService.getFoodItemList()
@@ -72,6 +74,7 @@ export class FoodListComponent implements OnInit {
   }
 
   async  onSubmit() {
+    this.spinnerFlag= true;
     let found = false;
     
 
@@ -99,7 +102,6 @@ export class FoodListComponent implements OnInit {
       this.items = [];
       this._foodService.getFoodItemList().subscribe(data => this.items = data);
       
-
       this.duplicateItemFlag = false;
       this.successMessageFlag = true;
       this.showAddNewItemFormFlag = false;
@@ -109,9 +111,11 @@ export class FoodListComponent implements OnInit {
       this.updateSuccessMessageFlag = false
 
     }
+    this.spinnerFlag= false;
+
   }
   async onUpdate() {
-    
+    this.spinnerFlag= true;
     let found = false;
     for (var i = 0; i < this.items.length; i++) {
       if (this.items[i].name == this.foodModel.name) {
@@ -142,6 +146,7 @@ export class FoodListComponent implements OnInit {
       this.showAddNewItemFormFlag = true;
       this.showMenuListFlag = false;
     }
+    this.spinnerFlag= false;
 
   }
 
