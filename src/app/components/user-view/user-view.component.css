@@ -6,7 +6,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color:  #333;
     overflow-x: hidden;
     padding-top: 20px;
     top: 53px;
@@ -15,22 +15,30 @@
   .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    color: #f1f1f1;
+    
     display: block;
   }
   
   .sidenav a:hover {
-    color: #f1f1f1;
+    color: #818181;
   }
   
   .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
+    margin-left: 180px; /* Same as the width of the sidenav */
+    font-size: 17px; /* Increased text to enable scrolling */
     padding: 0px 10px;
+    margin-right: 20px;
   }
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+  }
+
+  .container {
+    margin-left: 161px;
+    background-image: url('../../../assets/images/rest1.jpg');
+    background-size: auto auto;
+    background-repeat: repeat;
   }

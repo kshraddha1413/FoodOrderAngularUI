@@ -1,7 +1,6 @@
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-</head>
+<div class="sidenav">
+    <a (click)="onUpdateMenu()">Update Menu</a>
+</div>
 
 <div *ngIf="deleteItemMessageFlag">
     <div class="alert alert-success" role="alert">
@@ -38,45 +37,48 @@
 </div>
 
 <div *ngIf="showMenuListFlag">
-    <input type="button" (click)="OnAddNewItem()" value="Add New Item" style="float: right;margin-right: 100px;">
+
+    <input type="button" (click)="OnAddNewItem()" value="Add New Item" class="btn btn-secondary"
+        style="float: left;margin-left: 180px;margin-top: 3%;margin-bottom: 3%;">
     <br />
     <br />
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th scope="col">Id </th>
-                <th scope="col">Type</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Operation</th>
-            </tr>
-        </thead>
-        <tbody *ngFor="let item of items">
+    <div class="main">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id </th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>{{item.id}}</td>
+                    <td>{{item.type}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td> <input type="button" (click)="OnDeleteItem(item)" class="btn btn-secondary" value="Delete"
+                            style="margin:5px;">
+                        <input type="button" (click)="OnUpdateItem(item)" class="btn btn-secondary" value="Update"
+                            style="margin:5px;">
+                    </td>
+                </tr>
 
-            <tr>
-                <td>{{item.id}}</td>
-                <td>{{item.type}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.price}}</td>
-                <td> <input type="button" (click)="OnDeleteItem(item)" value="Delete" style="margin:5px;">
-                    <input  type="button" (click)="OnUpdateItem(item)" value="Update" style="margin:5px;">
-                </td>
-            </tr>
 
-
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 
 
-<div *ngIf="showAddNewItemFormFlag">
+<div class="main" style="width: 50%;" *ngIf="showAddNewItemFormFlag">
 
     <div class="container-fluid">
-        <form #userForm="ngForm" >
-
-
-
+        <h3 style="margin-top: 3%;margin-bottom: 3%;">{{TitleAddOrUpdate}}</h3>
+        <form #userForm="ngForm">
 
             <div class="form-group">
                 <label>Item Name</label>
@@ -96,8 +98,10 @@
                 <label>Item Price</label>
                 <input type="price" class="form-control" name="itemPrice" [(ngModel)]="foodModel.price">
             </div>
-            <button (click)="onSubmit()" *ngIf="submitButtonFlag" class="btn btn-primary" type="submit">Submit</button>
-            <button (click)="onUpdate()" *ngIf="updateButtonFlag" class="btn btn-primary" type="submit">Update</button>
+            <button (click)="onSubmit()" *ngIf="submitButtonFlag" class="btn btn-secondary"
+                type="submit">Submit</button>
+            <button (click)="onUpdate()" *ngIf="updateButtonFlag" class="btn btn-secondary"
+                type="submit">Update</button>
 
         </form>
 

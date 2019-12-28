@@ -21,6 +21,7 @@ export class FoodListComponent implements OnInit {
   updateButtonFlag: boolean
   updateErrorMessageFlag: boolean
   updateSuccessMessageFlag: boolean
+  TitleAddOrUpdate: string
 
   public items = [];
 
@@ -46,6 +47,12 @@ export class FoodListComponent implements OnInit {
       .subscribe(data => this.items = data);
   }
 
+  onUpdateMenu(){
+    this.items = [];
+    console.log('aaaa')
+    this.ngOnInit();
+  }
+
   types = ['Appetizer', 'Lunch', 'Dinner', 'Beverages', 'Kids','Special','Desserts'];
 
 
@@ -59,6 +66,7 @@ export class FoodListComponent implements OnInit {
     this.updateButtonFlag = false;
     this.updateErrorMessageFlag = false
     this.updateSuccessMessageFlag = false
+    this.TitleAddOrUpdate = 'Add New Item'
 
     this.foodModel = new FoodModel();
   }
@@ -173,6 +181,8 @@ export class FoodListComponent implements OnInit {
     this.deleteItemMessageFlag = false;
     this.submitButtonFlag = false;
     this.updateButtonFlag = true;
+
+    this.TitleAddOrUpdate='Update Item'
 
     this.foodModel = new FoodModel();
     this.foodModel.name = selectedItem.name;

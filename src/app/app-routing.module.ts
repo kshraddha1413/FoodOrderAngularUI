@@ -5,8 +5,9 @@ import { UserViewComponent } from './components/user-view/user-view.component';
 
 
 const routes: Routes = [
-  { path: 'adminView', component: FoodListComponent },
-  { path: 'userview', component: UserViewComponent }
+  { path: 'admin', component: FoodListComponent },
+  { path: 'customer', component: UserViewComponent },
+  { path: '', component: UserViewComponent }
 ];
 
 @NgModule({
