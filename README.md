@@ -1,6 +1,6 @@
-# FoodOrderUI
+# FoodOrderAngularUI
 
-FoodOrderUI is using FoodOrderSystemwithDB RESTFul API ( https://github.com/kshraddha1413/FoodOrderSystemwithDB )
+FoodOrderAngularUI is using FoodOrderSystemwithDB RESTFul API ( https://github.com/kshraddha1413/FoodOrderSystemwithDB )
 
 ## Customer View
 
