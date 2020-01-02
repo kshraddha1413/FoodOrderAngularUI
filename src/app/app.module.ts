@@ -5,16 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FoodService } from './food.service';
-import {HttpClientModule} from '@angular/common/http'
-import {FormsModule} from '@angular/forms';
-import { UserViewComponent } from './components/user-view/user-view.component'
-import { FoodListComponent } from './components/food-list/food-list.component';
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { CustomerViewComponent } from './components/cusotmer-view/customer-view.component'
+import { AdminViewComponent } from './components/admin-view/admin-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-        FoodListComponent,
-        UserViewComponent
+    AdminViewComponent,
+    CustomerViewComponent
   ],
   imports: [
     BrowserModule,

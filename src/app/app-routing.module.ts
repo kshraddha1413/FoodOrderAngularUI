@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FoodListComponent } from './components/food-list/food-list.component';
-import { UserViewComponent } from './components/user-view/user-view.component';
+import { AdminViewComponent } from './components/admin-view/admin-view.component';
+import { CustomerViewComponent } from './components/cusotmer-view/customer-view.component';
 
 
 const routes: Routes = [
-  { path: 'admin', component: FoodListComponent },
-  { path: 'customer', component: UserViewComponent },
-  { path: '', component: UserViewComponent }
+  { path: 'admin', component: AdminViewComponent },
+  { path: 'customer', component: CustomerViewComponent },
+  { path: '', component: CustomerViewComponent }
 ];
 
 @NgModule({

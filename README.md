@@ -1,6 +1,6 @@
-# RosUI
+# FoodOrderUI
 
-RosUI is using FoodOrderSystemwithDB RESTFul API ( https://github.com/kshraddha1413/FoodOrderSystemwithDB )
+FoodOrderUI is using FoodOrderSystemwithDB RESTFul API ( https://github.com/kshraddha1413/FoodOrderSystemwithDB )
 
 ## Customer View
 

@@ -3,10 +3,10 @@ import { FoodService } from '../../food.service';
 
 @Component({
   selector: 'app-user-view',
-  templateUrl: './user-view.component.html',
-  styleUrls: ['./user-view.component.css']
+  templateUrl: './customer-view.component.html',
+  styleUrls: ['./customer-view.component.css']
 })
-export class UserViewComponent implements OnInit {
+export class CustomerViewComponent implements OnInit {
 
   type:string;
   public items = [];

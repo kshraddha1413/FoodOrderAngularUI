@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rosUI": {
+    "FoodOrderUI": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rosUI",
+            "outputPath": "dist/FoodOrderUI",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rosUI:build"
+            "browserTarget": "FoodOrderUI:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rosUI:build:production"
+              "browserTarget": "FoodOrderUI:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rosUI:build"
+            "browserTarget": "FoodOrderUI:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rosUI:serve"
+            "devServerTarget": "FoodOrderUI:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rosUI:serve:production"
+              "devServerTarget": "FoodOrderUI:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "rosUI"
+  "defaultProject": "FoodOrderUI"
 }

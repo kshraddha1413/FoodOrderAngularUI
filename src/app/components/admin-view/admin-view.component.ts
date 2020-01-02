@@ -6,11 +6,11 @@ import { FormatWidth } from '@angular/common';
 import { MessageModel } from '../../model/MessageModel';
 
 @Component({
-  selector: 'app-food-list',
-  templateUrl: './food-list.component.html',
-  styleUrls: ['./food-list.component.css']
+  selector: 'app-admin-view',
+  templateUrl: './admin-view.component.html',
+  styleUrls: ['./admin-view.component.css']
 })
-export class FoodListComponent implements OnInit {
+export class AdminViewComponent implements OnInit {
 
   successMessageFlag: boolean;
   duplicateItemFlag: boolean

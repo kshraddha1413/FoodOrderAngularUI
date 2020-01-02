@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'rosUI'`, () => {
+  it(`should have as title 'FoodOrderUI'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('rosUI');
+    expect(app.title).toEqual('FoodOrderUI');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('rosUI app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('FoodOrderUI app is running!');
   });
 });
